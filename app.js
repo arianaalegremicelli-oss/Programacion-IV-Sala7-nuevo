@@ -17,9 +17,9 @@ mongoose.connect(MONGODB_URI)
   .then(() => console.log('Conectado a MongoDB exitosamente.'))
   .catch(err => console.error('Error al conectar a MongoDB:', err));
 
-// Importar rutas (comentado hasta que se creen las rutas)
-// const productosRoutes = require('./routes/productos');
-// app.use('/api/productos', productosRoutes);
+// Importar rutas
+const productosRoutes = require('./src/routes/producto.routes');
+app.use('/api/productos', productosRoutes);
 
 app.get('/', (req, res) => {
     res.send('Bienvenido a la API de Programación IV Sala7');
